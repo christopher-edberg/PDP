@@ -1,0 +1,13 @@
+ska arbeta med förra varvet -> behöver sync för att se till att alla e på samma iteration
+
+send vs sendI ?
+
+behöver bara vänta på högra och vänstra granne , så receive för att blockera och låta gå vidare och sendI för inte vänta på att grannar ska vara färdiga. ville inte behöva vänta på att de ska lyssna men vill att man får deras send tex. om 1 2 3 e klara men 3an väntar på 4an, 2 bör kunna köra iallafall
+pthreads för att köra 
+
+
+distribuera klar
+dela upp arbete klar
+impementera send för arrayens resultat
+samla allt på slutet i rank 0
+fixa timer

@@ -1,0 +1,32 @@
+Excercise 1:
+
+ -n 1 : Time: 78.384926 s
+ -n 4 Time: 20.165459 s
+ -n 16 Time: 5.190873 s 
+ -p node -n 32 Time: 2.657567 s
+
+In this case we do see that more cores always perform better, this is not necessarily the case for all programs depending on if there are controlled access to critical sections by the use of locks for example or depending on data locality, false sharing on small data. 
+
+
+Exercise 2: 
+	Tested and observed:
+ 		alltoall 1,4,8 proccesses
+		IO_gather 1,4,16 
+ 		ring 1,4,16
+
+Exercise 3:
+
+The bug is that only proccess 0 ask for the scan, as can be seen by root=rank
+ and can be shown my only having to enter the number once in DDT. the rest just print their numbers. 
+Did have some issues with source files, was using wrong mpicc version as i had forgotten to change to an older one. 
+Exercise 4:
+ Persistent groups up sends and receives and is never more than 1 send more than received. 
+ 	The parallel does not have to wait for an answer to the send right away and rather does so at a Waitall. 
+
+Exercise 5:
+ Examined the various viewpoints and angles. Also played around with modifying the arrays to see how it influenced the array viewer.
+
+
+Exercise 6:
+	Tested with wave-parallel.c, it spent most of its time waiting for MPI_Waitall(ireq, req_recv,stats); for 51.8 % of code execution, which is to be expected, used array size of 2048. Also examined time for memory access for other operations versus time to execute things like addition/subtraction operations. 
+
